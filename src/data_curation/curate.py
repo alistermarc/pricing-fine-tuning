@@ -1,5 +1,5 @@
 import pickle
-from sklearn.model_selection import train_test_split
+import random
 from src.data_curation.loader import ItemLoader
 from src.config import DATASET_CATEGORY
 
@@ -10,7 +10,10 @@ def curate_data():
     loader = ItemLoader(DATASET_CATEGORY)
     items = loader.load()
 
-    train_items, test_items = train_test_split(items, test_size=0.2, random_state=42)
+    random.seed(42)
+    random.shuffle(items)
+    train_items = items[:25_000]
+    test_items = items[25_000:27_000]
 
     with open("data/train.pkl", "wb") as f:
         pickle.dump(train_items, f)
@@ -18,5 +21,4 @@ def curate_data():
     with open("data/test.pkl", "wb") as f:
         pickle.dump(test_items, f)
 
-    print(f"Saved {len(train_items)} training items to data/train.pkl")
-    print(f"Saved {len(test_items)} testing items to data/test.pkl")
+    print(f"Divided into a training set of {len(train_items):,} items and test set of {len(test_items):,} items")
