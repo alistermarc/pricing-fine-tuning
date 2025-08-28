@@ -6,4 +6,13 @@ CEILING_CHARS = MAX_TOKENS * 7
 MIN_PRICE = 0.5
 MAX_PRICE = 999.49
 DATASET_NAME = "McAuley-Lab/Amazon-Reviews-2023"
-DATASET_CATEGORY = "Appliances"
+DATASET_CATEGORY = [
+    "Automotive",
+    "Electronics",
+    # "Office_Products",
+    # "Tools_and_Home_Improvement",
+    # "Cell_Phones_and_Accessories",
+    # "Toys_and_Games",
+    # "Appliances",
+    # "Musical_Instruments",
+]

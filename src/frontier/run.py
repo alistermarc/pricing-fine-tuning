@@ -9,8 +9,8 @@ from src.tester import Tester
 
 # environment
 load_dotenv(override=True)
-os.environ['OPENAI_API_KEY'] = os.getenv('OPENAI_API_KEY', 'your-key-if-not-using-env')
-os.environ['ANTHROPIC_API_KEY'] = os.getenv('ANTHROPIC_API_KEY', 'your-key-if-not-using-env')
+os.environ['OPENAI_API_KEY'] = os.getenv('OPENAI_API_KEY')
+os.environ['ANTHROPIC_API_KEY'] = os.getenv('ANTHROPIC_API_KEY')
 
 openai = OpenAI()
 claude = Anthropic()
@@ -39,16 +39,6 @@ def gpt_4o_mini(item):
     reply = response.choices[0].message.content
     return get_price(reply)
 
-def gpt_4o_frontier(item):
-    response = openai.chat.completions.create(
-        model="gpt-4o-2024-08-06", 
-        messages=messages_for(item),
-        seed=42,
-        max_tokens=5
-    )
-    reply = response.choices[0].message.content
-    return get_price(reply)
-
 def claude_3_point_5_sonnet(item):
     messages = messages_for(item)
     system_message = messages[0]['content']
@@ -64,7 +54,6 @@ def claude_3_point_5_sonnet(item):
 
 MODELS = {
     "gpt-4o-mini": gpt_4o_mini,
-    "gpt-4o-frontier": gpt_4o_frontier,
     "claude-3.5-sonnet": claude_3_point_5_sonnet
 }
 

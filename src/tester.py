@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import pickle
 
 COLOR_MAP = {
-    "green": "[32m",
-    "orange": "[33m",
-    "red": "[31m"
+    "green": "\033[32m",
+    "orange": "\033[33m",
+    "red": "\033[31m"
 }
 RESET = "[0m"
 

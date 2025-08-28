@@ -7,8 +7,10 @@ def curate_data():
     """
     Loads the data, processes it, and saves it to train.pkl and test.pkl
     """
-    loader = ItemLoader(DATASET_CATEGORY)
-    items = loader.load()
+    items = []
+    for category in DATASET_CATEGORY:
+        loader = ItemLoader(category)
+        items.extend(loader.load())
 
     random.seed(42)
     random.shuffle(items)

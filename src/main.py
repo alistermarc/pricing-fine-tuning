@@ -4,7 +4,7 @@ sys.path.append(os.getcwd())
 import argparse
 from src.data_curation.curate import curate_data
 from src.show_data_point import show_data_point
-from src.random_pricer.random_pricer import run as random_pricer_run
+from src.random_pricer.run import run as random_pricer_run
 from src.average_pricer.run import run as average_pricer_run
 from src.frontier.run import run as frontier_run
 
