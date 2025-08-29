@@ -1,0 +1,74 @@
+_wandb:
+    value:
+        cli_version: 0.21.1
+        e:
+            3bs4g02b3eu67dvxw3ymxoh2jbazw8cg:
+                apple:
+                    ecpuCores: 4
+                    gpuCores: 8
+                    memoryGb: 16
+                    name: Apple M2
+                    pcpuCores: 4
+                    ramTotalBytes: "17179869184"
+                args:
+                    - qlora_finetuning
+                codePath: src/main.py
+                codePathLocal: src/main.py
+                cpu_count: 8
+                cpu_count_logical: 8
+                disk:
+                    /:
+                        total: "245107195904"
+                        used: "147612381184"
+                email: alistermarcdomilies@gmail.com
+                executable: /Users/alistermarcdomilies/Desktop/Projects/pricing-fine-tuning/.venv/bin/python3
+                git:
+                    commit: 63c3139e728b4d04212eb4afa02b5816d8e316ee
+                    remote: https://github.com/alistermarc/pricing-fine-tuning.git
+                host: Alisters-MacBook-Air.local
+                memory:
+                    total: "17179869184"
+                os: macOS-15.1-arm64-arm-64bit
+                program: /Users/alistermarcdomilies/Desktop/Projects/pricing-fine-tuning/src/main.py
+                python: CPython 3.12.11
+                root: /Users/alistermarcdomilies/Desktop/Projects/pricing-fine-tuning
+                startedAt: "2025-08-29T18:10:32.594231Z"
+                writerId: 3bs4g02b3eu67dvxw3ymxoh2jbazw8cg
+        m: []
+        python_version: 3.12.11
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 84
+                - 95
+                - 97
+                - 98
+                - 105
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 84
+                - 95
+                - 97
+                - 98
+                - 105
+            "3":
+                - 13
+            "4": 3.12.11
+            "5": 0.21.1
+            "6": 4.55.4
+            "12": 0.21.1
+            "13": darwin-arm64

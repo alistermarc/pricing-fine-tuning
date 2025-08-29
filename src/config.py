@@ -8,7 +8,7 @@ MAX_PRICE = 999.49
 DATASET_NAME = "McAuley-Lab/Amazon-Reviews-2023"
 DATASET_CATEGORY = [
     "Automotive",
-    "Electronics",
+    # "Electronics",
     # "Office_Products",
     # "Tools_and_Home_Improvement",
     # "Cell_Phones_and_Accessories",
@@ -16,3 +16,6 @@ DATASET_CATEGORY = [
     # "Appliances",
     # "Musical_Instruments",
 ]
+CURATED_DATASET_NAME = "alistermarc/pricing-fine-tuning-curated"
+HF_USER = "alistermarc" 
+PROJECT_NAME = "llama3-pricer"

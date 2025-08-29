@@ -1,0 +1,39 @@
+{
+  "os":  "macOS-15.1-arm64-arm-64bit",
+  "python":  "CPython 3.12.11",
+  "startedAt":  "2025-08-29T18:10:32.594231Z",
+  "args":  [
+    "qlora_finetuning"
+  ],
+  "program":  "/Users/alistermarcdomilies/Desktop/Projects/pricing-fine-tuning/src/main.py",
+  "codePath":  "src/main.py",
+  "codePathLocal":  "src/main.py",
+  "git":  {
+    "remote":  "https://github.com/alistermarc/pricing-fine-tuning.git",
+    "commit":  "63c3139e728b4d04212eb4afa02b5816d8e316ee"
+  },
+  "email":  "alistermarcdomilies@gmail.com",
+  "root":  "/Users/alistermarcdomilies/Desktop/Projects/pricing-fine-tuning",
+  "host":  "Alisters-MacBook-Air.local",
+  "executable":  "/Users/alistermarcdomilies/Desktop/Projects/pricing-fine-tuning/.venv/bin/python3",
+  "cpu_count":  8,
+  "cpu_count_logical":  8,
+  "disk":  {
+    "/":  {
+      "total":  "245107195904",
+      "used":  "147612381184"
+    }
+  },
+  "memory":  {
+    "total":  "17179869184"
+  },
+  "apple":  {
+    "name":  "Apple M2",
+    "ecpuCores":  4,
+    "pcpuCores":  4,
+    "gpuCores":  8,
+    "memoryGb":  16,
+    "ramTotalBytes":  "17179869184"
+  },
+  "writerId":  "3bs4g02b3eu67dvxw3ymxoh2jbazw8cg"
+}
