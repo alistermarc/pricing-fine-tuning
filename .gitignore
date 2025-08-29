@@ -147,8 +147,6 @@ cython_debug/
 # VSCode
 .vscode/
 
-# Data files
-data/
 
 # OS generated files
 .DS_Store
