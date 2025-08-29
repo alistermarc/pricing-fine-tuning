@@ -3,6 +3,7 @@ import re
 import math
 import torch
 from huggingface_hub import login
+from datasets import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, set_seed
 import matplotlib.pyplot as plt
 import pickle
@@ -21,13 +22,13 @@ def run():
     hf_token = os.getenv('HF_TOKEN', 'your-key-if-not-using-env')
     login(hf_token, add_to_git_credential=True)
 
-    # Load Dataset
-    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-    with open(os.path.join(project_root, 'data', 'train.pkl'), 'rb') as file:
-        train = pickle.load(file)
+    # # Load Dataset
+    # project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+    # with open(os.path.join(project_root, 'data', 'train.pkl'), 'rb') as file:
+    #     train = pickle.load(file)
 
-    with open(os.path.join(project_root, 'data', 'test.pkl'), 'rb') as file:
-        test = pickle.load(file)
+    # with open(os.path.join(project_root, 'data', 'test.pkl'), 'rb') as file:
+    #     test = pickle.load(file)
 
     # Load Tokenizer and Quantized LLaMA Model
     quant_config = BitsAndBytesConfig(
@@ -60,12 +61,10 @@ def run():
         return 0
 
     def model_predict(item):
-        prompt = item.test_prompt()
+        prompt = item["prompt"]
         set_seed(42)
-        # inputs = tokenizer.encode(prompt, return_tensors="pt").to("cuda")
-        inputs = tokenizer.encode(prompt, return_tensors="pt")
-        # attention_mask = torch.ones(inputs.shape, device="cuda")
-        attention_mask = torch.ones(inputs.shape)
+        inputs = tokenizer.encode(prompt, return_tensors="pt").to("cuda")
+        attention_mask = torch.ones(inputs.shape, device="cuda")
         outputs = base_model.generate(inputs, max_new_tokens=4, attention_mask=attention_mask, num_return_sequences=1)
         response = tokenizer.decode(outputs[0])
         return extract_price(response)

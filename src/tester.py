@@ -1,6 +1,7 @@
 import math
 import matplotlib.pyplot as plt
 import pickle
+from datasets import load_dataset
 
 COLOR_MAP = {
     "green": "\033[32m",
@@ -9,8 +10,12 @@ COLOR_MAP = {
 }
 RESET = "[0m"
 
-with open("data/test.pkl", "rb") as f:
-    test = pickle.load(f)
+# with open("data/test.pkl", "rb") as f:
+#     test = pickle.load(f)
+
+DATASET_NAME = f"alistermarc/llama3-pricer-2025-08-30_02.01.02"
+dataset = load_dataset(DATASET_NAME)
+test = dataset['test']
 
 class Tester:
 
