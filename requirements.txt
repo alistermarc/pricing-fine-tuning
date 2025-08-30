@@ -8,7 +8,6 @@ scipy
 scikit-learn
 matplotlib
 gensim
-transformers
 tqdm
 openai
 gradio
@@ -35,10 +34,3 @@ sentence_transformers
 feedparser
 protobuf
 wandb
-torch 
-torchvision 
-torchaudio
-bitsandbytes
-accelerate
-peft
-trl

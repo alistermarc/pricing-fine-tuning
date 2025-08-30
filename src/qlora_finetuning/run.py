@@ -12,6 +12,8 @@ from src.data_curation.item import Item
 from dotenv import load_dotenv
 from src.config import BASE_MODEL, HF_USER, PROJECT_NAME
 
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 load_dotenv(override=True)
 hf_token = os.getenv('HF_TOKEN')
 wandb_api_key = os.getenv('WANDB_API_KEY')
@@ -26,22 +28,40 @@ def run():
     PROJECT_RUN_NAME = f"{PROJECT_NAME}-{RUN_NAME}"
     HUB_MODEL_NAME = f"{HF_USER}/{PROJECT_RUN_NAME}"
 
-    with open('data/train.pkl', 'rb') as file:
-        train_items = pickle.load(file)
+    # with open('data/train.pkl', 'rb') as file:
+    #     train_items = pickle.load(file)
 
-    with open('data/test.pkl', 'rb') as file:
-        test_items = pickle.load(file)
+    # with open('data/test.pkl', 'rb') as file:
+    #     test_items = pickle.load(file)
 
-    train_prompts = [item.prompt for item in train_items]
-    train_prices = [item.price for item in train_items]
-    test_prompts = [item.prompt for item in test_items]
-    test_prices = [item.price for item in test_items]
+    # train_prompts = [item.prompt for item in train_items]
+    # train_prices = [item.price for item in train_items]
+    # test_prompts = [item.prompt for item in test_items]
+    # test_prices = [item.price for item in test_items]
 
-    train = Dataset.from_dict({"prompt": train_prompts, "price": train_prices})
-    test = Dataset.from_dict({"prompt": test_prompts, "price": test_prices})
+    # train = Dataset.from_dict({"prompt": train_prompts, "price": train_prices})
+    # test = Dataset.from_dict({"prompt": test_prompts, "price": test_prices})
+
+    DATASET_NAME = f"alistermarc/llama3-pricer-2025-08-30_02.01.02"
+    dataset = load_dataset(DATASET_NAME)
+    train = dataset['train']
+    test = dataset['test']
+    split_ratio = 0.1  # 10% for validation
+
+    ##############################################################################
+    # Optional: limit training dataset to TRAIN_SIZE for testing/debugging
+    # Comment the two lines below to use the full dataset
+    TRAIN_SIZE = 20000
+    train = train.select(range(TRAIN_SIZE))
+    ##############################################################################
+
+    total_size = len(train)
+    val_size = int(total_size * split_ratio)
+
+    val_data = train.select(range(val_size))
+    train_data = train.select(range(val_size, total_size))
 
     split_ratio = 0.1
-    TRAIN_SIZE = 200
 
     train = train.select(range(TRAIN_SIZE))
     total_size = len(train)
@@ -118,7 +138,7 @@ def run():
     train_parameters = SFTConfig(
         output_dir=PROJECT_RUN_NAME,
         run_name=RUN_NAME,
-        dataset_text_field="text",
+        dataset_text_field="prompt",
         max_seq_length=MAX_SEQUENCE_LENGTH,
         num_train_epochs=EPOCHS,
         per_device_train_batch_size=BATCH_SIZE,
@@ -156,7 +176,7 @@ def run():
         peft_config=lora_parameters,
         args=train_parameters,
         data_collator=collator,
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=5)]
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=5)],
     )
 
     # Run Fine-Tuning and Push to Hub

@@ -18,4 +18,4 @@ DATASET_CATEGORY = [
 ]
 CURATED_DATASET_NAME = "alistermarc/pricing-fine-tuning-curated"
 HF_USER = "alistermarc" 
-PROJECT_NAME = "llama3-pricer"
+PROJECT_NAME = "alistermarc"

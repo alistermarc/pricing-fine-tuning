@@ -61,7 +61,7 @@ def run():
         return 0
 
     def model_predict(item):
-        prompt = item["prompt"]
+        prompt = item.test_prompt()
         set_seed(42)
         inputs = tokenizer.encode(prompt, return_tensors="pt").to("cuda")
         attention_mask = torch.ones(inputs.shape, device="cuda")

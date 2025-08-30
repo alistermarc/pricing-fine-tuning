@@ -1,0 +1,111 @@
+_wandb:
+    value:
+        cli_version: 0.21.2
+        e:
+            54yj89j2bhxocfdm0rd46ba6rj9wwpbh:
+                args:
+                    - qlora_finetuning
+                codePath: src/main.py
+                codePathLocal: src/main.py
+                cpu_count: 128
+                cpu_count_logical: 256
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "1887374536704"
+                        used: "1253164347392"
+                email: alistermarcdomilies@gmail.com
+                executable: /raid/students/alister/pricing-fine-tuning/.venv/bin/python3
+                git:
+                    commit: 90996391c6976159d1d66891f249c02c8aba2449
+                    remote: https://github.com/alistermarc/pricing-fine-tuning.git
+                gpu: NVIDIA A100-SXM4-40GB
+                gpu_count: 8
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-266c6601-7b9c-de1d-cc5a-58fa2e80c2d2
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-bf2fa8dc-a4d4-d105-96bd-b5d85dcd6ceb
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-d383ddd2-e51e-7a81-e088-27de39359ce3
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-7207f21a-3f9d-bf47-9aed-653a8cf1d6dd
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-2bb4de11-4f06-690b-d7c2-d436923e0eb2
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-ca641382-344c-a857-1149-c8c02d9cce77
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-4cf45d03-96d1-57e4-f842-ebf2c5bd000f
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-790dbb1e-3bde-795d-a439-05d85c3f4bde
+                host: ai-n003
+                memory:
+                    total: "1081970384896"
+                os: Linux-5.4.0-216-generic-x86_64-with-glibc2.31
+                program: /raid/students/alister/pricing-fine-tuning/src/main.py
+                python: CPython 3.12.7
+                root: /raid/students/alister/pricing-fine-tuning
+                startedAt: "2025-08-29T19:18:15.611377Z"
+                writerId: 54yj89j2bhxocfdm0rd46ba6rj9wwpbh
+        m: []
+        python_version: 3.12.7
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 84
+                - 95
+                - 97
+                - 98
+                - 105
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 84
+                - 95
+                - 97
+                - 98
+                - 105
+            "3":
+                - 13
+            "4": 3.12.7
+            "5": 0.21.2
+            "6": 4.48.3
+            "12": 0.21.2
+            "13": linux-x86_64
