@@ -1,5 +1,7 @@
 # Product Pricer
 
+This project is based on the [LLM Engineering Course](https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models) by Ed Donner. The original project was implemented in Jupyter notebooks, and this version has been transitioned to Python scripts to better understand the concepts and run experiments.
+
 This project aims to build and fine-tune a large language model to predict the price of a product based on its description.
 
 ## Setup
@@ -30,14 +32,6 @@ To curate the data, run:
 python src/main.py curate_data
 ```
 
-### Show Data Point
-
-To show a random data point, run:
-
-```bash
-python src/main.py show_data_point
-```
-
 ### Pricing Models
 
 To run the different pricing models, use the following commands:
@@ -62,11 +56,11 @@ To run the different pricing models, use the following commands:
     ```bash
     python src/main.py open_source_prediction
     ```
--   **Open Source Fine-tuning Prediction:**
-    ```bash
-    python src/main.py open_source_finetuning_prediction
-    ```
 -   **QLoRA Fine-tuning:**
     ```bash
     python src/main.py qlora_finetuning
+    ```
+-   **QLoRA Fine-tuned Prediction:**
+    ```bash
+    python src/main.py qlora_finetuned_prediction
     ```
